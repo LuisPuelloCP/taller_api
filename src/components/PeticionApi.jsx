@@ -6,7 +6,7 @@ const PeticionApi = () => {
 
   const obtenerPersonajes = async () => {
     try {
-        const res = await fetch(`http://api.disneyapi.dev/character?page=${paginacion}&pageSize=50`)
+        const res = await fetch(`https://api.disneyapi.dev/character?page=${paginacion}&pageSize=50`)
         const {data} = await res.json()
         setPersonajes(data)
     } catch (error) {
