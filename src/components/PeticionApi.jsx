@@ -14,6 +14,15 @@ const PeticionApi = () => {
     }
   }
   
+  const siguiente = () => {
+    setPaginacion(paginacion + 1)
+    obtenerPersonajes()
+  }
+
+  const atras = () => {
+    setPaginacion(paginacion - 1)
+    obtenerPersonajes()
+  }
 
 
   return (
@@ -21,7 +30,9 @@ const PeticionApi = () => {
       <h1 >Personajes de Disney</h1>
       <hr />
       <div>
+        <button onClick={atras}>Atras</button>
         <button  onClick={obtenerPersonajes}>Obtener personajes</button>
+        <button onClick={siguiente}> Siguiente</button>
       </div>
       
       
