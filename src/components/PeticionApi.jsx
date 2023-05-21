@@ -1,9 +1,23 @@
-import React from 'react'
+import React from "react";
 
-function PeticionApi() {
+const PeticionApi = () => {
+  const [personajes, setPersonajes] = React.useState([]);
+  const [paginacion, setPaginacion] = React.useState(1);
+
+  const obtenerPersonajes = async () => {
+    try {
+        const res = await fetch(`http://api.disneyapi.dev/character?page=1&pageSize=50`)
+        const {data} = await res.json()
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+
   return (
-    <div>PeticionApi</div>
-  )
+    <button onClick={obtenerPersonajes}>Obtener personajes</button>
+  );
 }
 
-export default PeticionApi
+export default PeticionApi;
