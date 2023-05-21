@@ -20,6 +20,9 @@ const PeticionApi = () => {
   }
 
   const atras = () => {
+    if (paginacion === 1) {
+        return
+    }
     setPaginacion(paginacion - 1)
     obtenerPersonajes()
   }
