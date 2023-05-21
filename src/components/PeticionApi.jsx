@@ -29,22 +29,22 @@ const PeticionApi = () => {
 
 
   return (
-    <div >
-      <h1 >Personajes de Disney</h1>
+    <div className="container text-center" >
+      <h1 className="text-center" >Personajes de Disney</h1>
       <hr />
-      <div>
-        <button onClick={atras}>Atras</button>
-        <button  onClick={obtenerPersonajes}>Obtener personajes</button>
-        <button onClick={siguiente}> Siguiente</button>
+      <div className="container-sm mb-3">
+        <button className="btn btn-secondary mx-2" onClick={atras}>Atras</button>
+        <button className="btn btn-success mx-2" onClick={obtenerPersonajes}>Obtener personajes</button>
+        <button className="btn btn-primary mx-2" onClick={siguiente}> Siguiente</button>
       </div>
       
       
       {
         personajes.map(({_id,name,imageUrl}) => (
-            <div key={_id}>
-                <div >
-                  <img src= {imageUrl} alt={name} />
-                  <h4>{_id} - {name}</h4>
+            <div className="mb-3" key={_id}>
+                <div className="d-flex aligns-items-center justify-content-center card text-center mx-auto mb3" style={{width:"18rem"}}>
+                  <img className="card-img-top" src= {imageUrl} alt={name} />
+                  <h4 class="card-text">{_id} - {name}</h4>
                 </div> 
             </div>
         ))
